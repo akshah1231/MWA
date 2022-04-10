@@ -1,0 +1,53 @@
+[
+    {
+      "_id": "624a28867c72a3bb29fdd6c0",
+      "title": "Dota 2",
+      "year": 2013,
+      "publisher": {
+        "name": "Valve Corporation",
+        "established": 1997,
+        "_id": "624a28867c72a3bb29fdd6c1"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "624a2dd68ebcc936ac799820",
+      "title": "CS-GO",
+      "year": 2013,
+      "publisher": {
+        "name": "NoName",
+        "_id": "624a2dd68ebcc936ac799821"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "624a2e3f8974bfd179e25f8a",
+      "title": "Valorant",
+      "year": 2020,
+      "publisher": {
+        "name": "NoName",
+        "_id": "624a2e3f8974bfd179e25f8b"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "624a2f1148c5fe236fedb229",
+      "title": "FORTNITE",
+      "year": 2017,
+      "publisher": {
+        "name": "NoName",
+        "_id": "624a2fbcea41364e4075088f"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "624a373ffbb2b7f3d6f26861",
+      "title": "Fall Guys",
+      "year": 2022,
+      "publisher": {
+        "name": "NoName",
+        "_id": "624a44b0c1b0c3beacd849cf"
+      },
+      "__v": 0
+    }
+  ]

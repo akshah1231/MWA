@@ -1,0 +1,17 @@
+.topright{
+    display: flex;
+    gap: 0.5em;
+}
+
+body{
+    padding: 1em;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+nav{
+    display: flex;
+    gap: 0.5em;
+}

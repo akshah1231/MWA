@@ -1,0 +1,14 @@
+<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Game Search">
+<br>
+<ul>
+    <li *ngFor="let game of games | filter:searchText">
+        <a routerLink="/games/{{game._id}}">
+            {{game.title}}
+        </a>
+    </li>
+    <br>
+    <div *ngIf = "isLoggedIn">
+        <app-add-game></app-add-game>
+    </div>
+    
+</ul>

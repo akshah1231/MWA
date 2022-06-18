@@ -5,7 +5,7 @@ const publisherSchema= new mongoose.Schema({
         type: String,
         required: true
     },
-    established: Number
+    established: String
 });
 
 const gameSchema= mongoose.Schema({

@@ -5,21 +5,35 @@ const Game=mongoose.model(process.env.GAME_MODEL);
 const getOne=function(req,res){
     console.log("getting one publisher controller");
     const gameId=req.params.gameId;
-    Game.findById(gameId).select("publisher").exec(function(err,game){
-        const response={status:200,message:game.publisher};
-        if(err){
-            console.log("Error finding game");
-            response.status=500;
-            response.message=err;
-        }else if(!game){
-            console.log(("game id not found"));
-            res.status(404).json({"message" : "Game ID not found"});
-        }else{
-            console.log("Found publihser",game.publisher,"for game",game);
-        }
-        res.status(response.status).json(response.message);
-    });
-};
+    Game.findById(gameId).select("publisher")
+        .then(game => {
+            if (!game) {
+                console.log(("game id not found"));
+                res.status(404).json({ "message": "Game ID not found" });
+            } else{
+                utils.onSuccessMessageHandler(response, process.env.GET_SUCCESS_CODE, game);
+            }
+        })
+        .catch(err => utils.onErrorMessageHandler(response, process.env.INTERNAL_ERROR_MSG, err))
+        .finally(()=> utils.responseRequest(response, res));
+}
+    
+    
+//     .exec(function(err,game){
+//         const response={status:200,message:game.publisher};
+//         if(err){
+//             console.log("Error finding game");
+//             response.status=500;
+//             response.message=err;
+//         }else if(!game){
+//             console.log(("game id not found"));
+//             res.status(404).json({"message" : "Game ID not found"});
+//         }else{
+//             console.log("Found publihser",game.publisher,"for game",game);
+//         }
+//         res.status(response.status).json(response.message);
+//     });
+// };
 
 const addOne=function(req,res){
     console.log("add one publisher controller");
@@ -38,8 +52,9 @@ const addOne=function(req,res){
         }
         if(game){
             _addPublisher(req,res,game);
-        }
+        }else{
         res.status(response.staus).json(response.message);
+        }
     });
 }
 

@@ -1,0 +1,15 @@
+<header>
+    <nav>
+        <button (click)="onHome()">Home</button>
+        <button (click)="onGames()">Games</button>
+        <div *ngIf = "!isLoggedIn">
+            <button (click)="onRegister()">Register</button>
+        </div>
+        <div *ngIf = "isLoggedIn">
+            <button (click)="onProfile()">Profile</button>
+        </div>
+    </nav>
+    <div class="topright">
+        <app-login></app-login>
+    </div>
+</header>

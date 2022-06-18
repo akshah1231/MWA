@@ -3,9 +3,11 @@ const express=require("express");
 const router=express.Router();
 const gamesController=require("../controllers/games.controllers");
 const publisherController=require("../controllers/publishers.controllers");
+const usersContrller=require("../controllers/users.controllers")
+const authenticationController=require("../controllers/authentication.controllers")
 
 router.route("/games")
-    .post(gamesController.addOne)
+    .post(gamesController.addOne,authenticationController.authenticate)
     .get(gamesController.getAll);
     
 
@@ -23,5 +25,10 @@ router.route("/games/:gameId/publisher")
 
 router.route("/games/:gameID/publisher/:publisherId")
     .get(publisherController.getOne);
+
+router.route("/users")
+    .post(usersContrller.addUser);
+router.route("/users/login")
+    .post(usersContrller.loginUser);
 
 module.exports=router;

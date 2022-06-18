@@ -1,0 +1,13 @@
+<h1>{{game.title}}</h1>
+<br/>
+Year:{{game.year}}<br/><br>
+Publisher:
+<p>&emsp;Name:{{game.publisher.name}} </p>
+<p>&emsp;Established:{{game.publisher.established | date}}</p>
+
+
+<br /><br />
+<div class="button" *ngIf = "isLoggedIn">
+<button (click)="onDelete()">Delete</button>
+<button routerLink="/games/update/{{game._id}}">Edit game</button>
+</div>

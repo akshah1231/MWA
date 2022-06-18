@@ -1,4 +1,5 @@
 require("./games-model");
+require("./users-model");
 
 const mongoose=require("mongoose");
 mongoose.connect(process.env.DB_URL);

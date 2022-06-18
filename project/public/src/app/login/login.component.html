@@ -1,0 +1,44 @@
+<!-- <div *ngIf="!isLoggedIn">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <label>
+            Username:
+            <input name="name" placeholder="Your name" ngModel />
+        </label>
+        <label>
+            Password:
+            <input name="password" type="password" placeholder="Password" ngModel />
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<div *ngIf="isLoggedIn">
+    {{ name }}
+    <button type="submit" (click)="logout()">Logout</button>
+</div> -->
+
+
+<div *ngIf="!isLoggedIn">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div>
+            <label>
+            UserName:
+        </label>
+            <input name="username" placeholder="username" ngModel/>
+            <label>
+            Password:
+        </label>
+            <input name="password" type="password" placeholder="password" ngModel/>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="isLoggedIn">
+    Welcome {{name}}
+    <button (click)="onLogOut()">LogOut</button>
+</div>
+<div [ngStyle]="{ 'color': 'red'}" *ngIf="unAuthorised">
+    Invalid username or password.
+</div>

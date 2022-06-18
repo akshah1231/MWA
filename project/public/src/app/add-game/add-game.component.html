@@ -1,0 +1,24 @@
+<h2>ADD NEW GAME</h2>
+
+
+<form class="form" [formGroup]="gameForm" (ngSubmit)="addGame(gameForm)">
+    <div>
+        <label for="title">Title</label>
+        <input formControlName="title" type="text">
+    </div> 
+    <div>
+        <label for="year">Year</label>
+        <input formControlName="year" type="text">
+    </div>
+    <div>
+        <label for="name">Publisher Name</label>
+        <input formControlName="name" type="text">
+    </div>
+    <div>
+        <label for="established">Established</label>
+        <input formControlName="established" type="text">
+    </div>
+    <div>
+        <button type="submit">Add Game</button>
+        </div>
+</form>
